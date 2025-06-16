@@ -6,11 +6,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'prettier',
+    'plugin:prettier/recommended',
+    'eslint-config-prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -19,10 +18,11 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'import'],
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'import', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off', // Not needed in projects using React 17+
     'react/prop-types': 'off', // Disable prop-types rule if you're using TypeScript
+    quotes: ['error'],
   },
   settings: {
     react: {
